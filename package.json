@@ -1,5 +1,5 @@
 {
-  "name": "jest-test",
+  "name": "battleship",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,5 +14,22 @@
     "@babel/preset-env": "^7.16.11",
     "babel-jest": "^27.4.5",
     "jest": "^27.4.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "^react(.*)$": "<rootDir>/vendor/react-master$1",
+      "^config$": "<rootDir>/configs/app-config.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ]
   }
 }
