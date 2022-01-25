@@ -1,8 +1,16 @@
-const Ship = (length) => {
+const Ship = (val) => {
   const hit = (num) => {
-    return num;
+    if (num) return "hit";
   };
-  return { length, hit };
+
+  const length = (num) => num;
+
+  const isSunk = () => {
+    const getLength = length();
+    const positionsHit = hit();
+    if (getLength === positionsHit) return "ship sank";
+  };
+  return { length, hit, isSunk };
 };
 
 export default Ship;
