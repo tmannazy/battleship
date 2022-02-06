@@ -25,11 +25,11 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
       },
-      {
-        test: /\.js$/i,
-        enforce: "pre",
-        use: ["source-map-loader"],
-      },
+      // {
+      //   test: /\.js$/i,
+      //   enforce: "pre",
+      //   use: ["source-map-loader"],
+      // },
     ],
     //   loaders: [
     //   { exclude: ["node_modules"], loader: "babel", test: /\.jsx?$/ },
@@ -41,7 +41,7 @@ module.exports = {
   resolve: {
     alias: {
       config$: "./configs/app-config.js",
-      react: "./vendor/react-master",
+      // react: "./vendor/react-master",
     },
     extensions: ["", "js", "jsx"],
     modules: [
