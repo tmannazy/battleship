@@ -2,14 +2,12 @@ const Ship = (length) => {
   const shipArray = Array(length).fill(null);
 
   const hit = (position) => {
-    shipArray.forEach((element, index, array) => {
+    const shipsHit = shipArray.forEach((element, index, array) => {
       if (array[index] !== "hit" && index === position) {
         array[index] = "hit";
-      } else if (array[index] === "hit") {
-        return false;
       }
     });
-    return shipArray;
+    return shipsHit;
   };
 
   const isSunk = () => {
@@ -19,7 +17,16 @@ const Ship = (length) => {
 
   const getShipArray = () => [...shipArray];
 
-  return { length, hit, isSunk, getShipArray };
+  const isPositionMarked = (val) => {
+    const checkPosition = shipArray.forEach((element, index) => {
+      if (index === val) {
+        throw new Error("position already marked");
+      }
+    });
+    return checkPosition;
+  };
+
+  return { length, hit, isSunk, getShipArray, isPositionMarked };
 };
 
 export default Ship;
