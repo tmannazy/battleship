@@ -27,4 +27,27 @@ describe("test the ship factory behavior", () => {
     ]);
     expect(shipUnderTest.isSunk()).toBe(true);
   });
+
+  test.only("targeted hit on already marked position", () => {
+    shipUnderTest.hit(0);
+    shipUnderTest.hit(1);
+    shipUnderTest.hit(2);
+    shipUnderTest.hit(3);
+    shipUnderTest.hit(4);
+    expect(shipUnderTest.getShipArray()).toEqual([
+      "hit",
+      "hit",
+      "hit",
+      "hit",
+      "hit",
+    ]);
+
+    const indexOfRepeatPos = shipUnderTest.getShipArray().at(2);
+    const arrayOfShip = shipUnderTest.getShipArray();
+
+    const checkForError = () =>
+      shipUnderTest.isPositionMarked(arrayOfShip.indexOf(indexOfRepeatPos));
+
+    expect(checkForError).toThrowError(Error);
+  });
 });
