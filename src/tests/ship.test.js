@@ -1,13 +1,13 @@
 import Ship from "../codes/ship";
 
-describe("test the ship factory behavior", () => {
+describe("test the ship factory behavior for", () => {
   const shipUnderTest = Ship(5);
 
   test("the correct length of a ship", () => {
     expect(shipUnderTest.length).toEqual(5);
   });
 
-  test("player's ship hit targeted position correctly", () => {
+  test("ship target correctly hit", () => {
     shipUnderTest.hit(2);
     expect(shipUnderTest.getShipArray().at(2)).toBe("hit");
   });
@@ -28,7 +28,7 @@ describe("test the ship factory behavior", () => {
     expect(shipUnderTest.isSunk()).toBe(true);
   });
 
-  test.only("targeted hit on already marked position", () => {
+  test("another new hit on already marked position", () => {
     shipUnderTest.hit(0);
     shipUnderTest.hit(1);
     shipUnderTest.hit(2);
