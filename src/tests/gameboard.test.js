@@ -4,8 +4,8 @@ import Gameboard from "../codes/gameboard";
 describe("test the gameboard factory behavior for", () => {
   const boardUnderTest = Gameboard();
 
-  test("that gameboard is 10 x 10 grid forat", () => {
-    expect(boardUnderTest.board()).toEqual(
+  test("gameboard to be in 10 x 10 grid format", () => {
+    expect(boardUnderTest.boardArray).toEqual([
       ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
       ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
       ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
@@ -15,7 +15,11 @@ describe("test the gameboard factory behavior for", () => {
       ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
       ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
       ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
-      ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"]
-    );
+      ["~", "~", "~", "~", "~", "~", "~", "~", "~", "~"],
+    ]);
   });
+
+  test('ship length is placed correctly on the board', () => {
+    expect(boardUnderTest.)
+  })
 });
