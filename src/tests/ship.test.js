@@ -1,6 +1,6 @@
 import Ship from "../codes/ship";
 
-describe("test the ship factory behavior for", () => {
+describe.skip("test the ship factory behavior for", () => {
   const shipUnderTest = Ship(5);
 
   test("the correct length of a ship", () => {
@@ -47,7 +47,6 @@ describe("test the ship factory behavior for", () => {
 
     const checkForError = () =>
       shipUnderTest.isPositionMarked(arrayOfShip.indexOf(indexOfRepeatPos));
-
     expect(checkForError).toThrowError(Error);
   });
 });
