@@ -4,7 +4,9 @@ const Gameboard = () => {
     .map((arr) => Array(10).fill("~"));
 
   const receiveAttack = () => {};
-  return { boardArray, receiveAttack };
+
+  const coordinates = () => {};
+  return { boardArray, receiveAttack, coordinates };
 };
 
 export default Gameboard;
