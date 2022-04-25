@@ -23,8 +23,13 @@ const Ship = (length) => {
         throw new Error("position already marked");
       }
     });
-    return checkPosition;
+    // return checkPosition;
   };
+
+  //   const vCoordinate = () => {
+  // getShipArray.
+
+  //   };
 
   return { length, hit, isSunk, getShipArray, isPositionMarked };
 };
